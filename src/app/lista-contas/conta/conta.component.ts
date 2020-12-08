@@ -9,8 +9,11 @@ export class ContaComponent implements OnInit {
 
   
   @Input() valor;
+  @Input() nomeBanco;
 
-  @Output() novoValor: EventEmitter<number> = new EventEmitter<number>();
+  @Output() valorChange: EventEmitter<number> = new EventEmitter<number>();
+  @Output() valorNegativo: EventEmitter<boolean> = new EventEmitter<boolean>();
+
 
   constructor() { }
 
@@ -19,12 +22,23 @@ export class ContaComponent implements OnInit {
 
   add() {
     this.valor= this.valor + 10
-    this.novoValor.emit(this.valor);
+    this.valorChange.emit(this.valor);
+    this.validaSaldo();
+
   }
 
   remover() {
     this.valor = this.valor - 10
-    this.novoValor.emit(this.valor);
+    this.valorChange.emit(this.valor);
+    this.validaSaldo();
+
   }
 
+  validaSaldo(){
+    if (this.valor < 0) {
+      this.valorNegativo.emit(true);
+    } else {
+      this.valorNegativo.emit(false);
+    }
+  }
 }

@@ -26,4 +26,9 @@ export class ListaContasComponent implements OnInit {
     this.listaContas[0].saldo = saldoNovo;
 
   }
+
+  imprimeEvento(evento){
+    console.log(evento);
+  }
+
 }
