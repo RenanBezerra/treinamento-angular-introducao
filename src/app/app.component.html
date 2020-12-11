@@ -1,3 +1,10 @@
 <!-- <app-hello-world></app-hello-world> -->
 
-<app-lista-contas></app-lista-contas>
+<!-- <app-lista-contas></app-lista-contas> -->
+
+<label for="nome">Nome: </label>
+<input type="text" (input)="validar()" [(ngModel)]="nome" id="nome" >
+
+<br>
+
+Nome : {{ nome }}

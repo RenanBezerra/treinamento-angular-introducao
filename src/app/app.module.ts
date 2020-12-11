@@ -5,6 +5,7 @@ import { AppComponent } from './app.component';
 import { HelloWorldComponent } from './hello-world/hello-world.component';
 import { ListaContasComponent } from './lista-contas/lista-contas.component';
 import { ContaComponent } from './lista-contas/conta/conta.component';
+import { FormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -14,7 +15,8 @@ import { ContaComponent } from './lista-contas/conta/conta.component';
     ContaComponent
   ],
   imports: [
-    BrowserModule
+    BrowserModule,
+    FormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]
