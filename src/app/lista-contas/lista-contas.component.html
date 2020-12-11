@@ -1,19 +1,18 @@
-<div>
+<div *ngFor="let c of listaContas">
 
-    {{listaContas[0].saldo}}
+    {{c.saldo}}
     <br>
-    <span [ngStyle]="{'font-weight': listaContas[0].saldo < 0 ? 'bold' : 'normal'}" >
-        Saldo no Component Pai: {{ listaContas[0].saldo }}
+    <span [ngStyle]="{'font-weight': c.saldo < 0 ? 'bold' : 'normal'}" >
+        Saldo no Component Pai: {{ c.saldo }}
     </span>
     <br>
-    <app-conta [valor]="listaContas[0].saldo" [nomeBanco]="listaContas[0].nomeBanco"
-        (valorChange)="atualizaConta($event)"> </app-conta>
+    <app-conta [(valor)]="c.saldo" [nomeBanco]="c.nomeBanco"></app-conta> 
 </div>
 
-<div>
+<!-- <div>
     Santander:
     <br>
     Saldo no Component Pai: {{contaSantander}}
     <br>
     <app-conta  nomeBanco="Santander" (valorNegativo)="imprimeEvento($event)" [(valor)]="contaSantander"> </app-conta>
-</div>
+</div> -->

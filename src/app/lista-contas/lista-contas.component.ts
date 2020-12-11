@@ -1,4 +1,4 @@
-import { Component,  OnInit } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 
 @Component({
   selector: 'app-lista-contas',
@@ -8,26 +8,23 @@ import { Component,  OnInit } from '@angular/core';
 export class ListaContasComponent implements OnInit {
 
   listaContas = [
-    {
-      nomeBanco:'Bradesco' , saldo:10
-    },
-    {
-      nomeBanco:'Santander' ,saldo:100
-    }
+    { nomeBanco: 'Bradesco', saldo: 10 },
+    { nomeBanco: 'Santander', saldo: 100 },
+    { nomeBanco: 'Itau' , saldo: 100}
   ];
 
-    contaSantander = 99;
+  contaSantander = 99;
   constructor() { }
 
   ngOnInit(): void {
   }
 
-  atualizaConta(saldoNovo:number){
+  atualizaConta(saldoNovo: number) {
     this.listaContas[0].saldo = saldoNovo;
 
   }
 
-  imprimeEvento(evento){
+  imprimeEvento(evento) {
     console.log(evento);
   }
 

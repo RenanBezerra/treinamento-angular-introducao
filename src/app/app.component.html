@@ -1,14 +1,16 @@
 <!-- <app-hello-world></app-hello-world> -->
 
-<!-- <app-lista-contas></app-lista-contas> -->
+<app-lista-contas></app-lista-contas>
 
-<label for="nome">Nome: </label>
+<!-- <label for="nome">Nome: </label>
 <input type="text" (input)="validar()" [(ngModel)]="nome" id="nome">
 
 <br>
 <span *ngIf="nome.length > 0">Nome : {{ nome }} </span>
 <span [style.display]="nome.length > 0 ? 'block' : 'none' ">Nome : {{ nome }} </span>
 
-<div *ngFor="let n of lista">
+<div *ngFor="let n of lista; let i = index">
     <span>Numero Aletório:<strong> {{ n }}</strong> </span>
-</div>
+    <br>
+    <span>Index - {{ i }}</span>
+</div> -->
