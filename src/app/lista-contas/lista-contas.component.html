@@ -1,12 +1,21 @@
 <div *ngFor="let c of listaContas">
 
-    {{c.saldo}}
+    
     <br>
     <span [ngStyle]="{'font-weight': c.saldo < 0 ? 'bold' : 'normal'}" >
         Saldo no Component Pai: {{ c.saldo }}
     </span>
     <br>
-    <app-conta [(valor)]="c.saldo" [nomeBanco]="c.nomeBanco"></app-conta> 
+    <app-conta [(valor)]="c.saldo" [nomeBanco]="c.nomeBanco"></app-conta>
+
+    <div [ngSwitch]="c.saldo">
+        <span *ngSwitchCase="-10"> Conta -10</span>
+        <span *ngSwitchCase="100"> Conta com 100</span>
+        <span *ngSwitchCase="200"> Conta com 200</span>
+        <span *ngSwitchDefault> ------</span>
+
+    </div>
+
 </div>
 
 <!-- <div>
