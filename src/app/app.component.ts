@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-root',
@@ -13,4 +14,12 @@ export class AppComponent {
   validar(){
     console.log(this.nome)
   }
+
+    constructor(private router: Router){
+
+    }
+
+    irParaRota(){
+      this.router.navigate(['contas'])
+    }
 }

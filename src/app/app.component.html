@@ -1,6 +1,6 @@
 <!-- <app-hello-world></app-hello-world> -->
 
-<app-lista-contas></app-lista-contas>
+<!-- <app-lista-contas></app-lista-contas> -->
 
 <!-- <label for="nome">Nome: </label>
 <input type="text" (input)="validar()" [(ngModel)]="nome" id="nome">
@@ -14,3 +14,9 @@
     <br>
     <span>Index - {{ i }}</span>
 </div> -->
+
+<a routerLink="">Home</a>
+<br>
+<a (click)="irParaRota()">Lista Contas</a>
+
+<router-outlet></router-outlet>

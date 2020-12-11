@@ -1,3 +1,4 @@
+import { AppRouterModule } from './app.routing.module';
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 
@@ -6,6 +7,7 @@ import { HelloWorldComponent } from './hello-world/hello-world.component';
 import { ListaContasComponent } from './lista-contas/lista-contas.component';
 import { ContaComponent } from './lista-contas/conta/conta.component';
 import { FormsModule } from '@angular/forms';
+import { RouterModule } from '@angular/router';
 
 @NgModule({
   declarations: [
@@ -16,7 +18,8 @@ import { FormsModule } from '@angular/forms';
   ],
   imports: [
     BrowserModule,
-    FormsModule
+    FormsModule,
+    AppRouterModule
   ],
   providers: [],
   bootstrap: [AppComponent]
