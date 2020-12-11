@@ -3,8 +3,8 @@
 <!-- <app-lista-contas></app-lista-contas> -->
 
 <label for="nome">Nome: </label>
-<input type="text" (input)="validar()" [(ngModel)]="nome" id="nome" >
+<input type="text" (input)="validar()" [(ngModel)]="nome" id="nome">
 
 <br>
-
-Nome : {{ nome }}
+<span *ngIf="nome.length > 0">Nome : {{ nome }} </span>
+<span [style.display]="nome.length > 0 ? 'block' : 'none' ">Nome : {{ nome }} </span>

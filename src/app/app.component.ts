@@ -7,7 +7,7 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'treinamento-angular';
-  nome = 'Nome';
+  nome = '';
 
   validar(){
     console.log(this.nome)
