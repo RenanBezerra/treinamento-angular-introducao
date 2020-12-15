@@ -31,17 +31,17 @@ export class TemplateDrivenComponent {
     if(this.model.nome.length < 3){
       this.msgErroNome = 'Nome precisa ter 3 letras';
       valid = false;
+    }else{
+      this.msgErroNome = '';
     }
+
     if(this.model.idade <= 0){
       this.msgErroIdade = 'A idade tem que ser maior que 0';
       valid = false;
+    }else{
+      this.msgErroIdade = '';
     }
 
-    if(valid){
-    this.msgErroNome = '';
-    this.msgErroIdade = '';
-
-    }
     return valid;
   }
 }
