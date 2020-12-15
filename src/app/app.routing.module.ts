@@ -9,8 +9,12 @@ import { RouterModule } from '@angular/router';
 
 const rotas = [
     { path: '', component: HelloWorldComponent },
-    { path: 'contas', component: ListaContasComponent }
-]
+    { path: 'contas', component: ListaContasComponent, 
+        children: [
+            { path: 'hello', component: HelloWorldComponent },
+        ],}
+        ];
+
 
 @NgModule({
     imports: [RouterModule.forRoot(rotas)],
