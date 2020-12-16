@@ -1,1 +1,38 @@
-<p>reactive-forms works!</p>
+<form [formGroup]="form" (ngSubmit)="salvar()">
+    <br>
+    <div>
+        <label for="nome">Nome:</label>
+        <input type="text" name="nome" formControlName="nomeDoUsuario" required>
+        <span *ngIf="form.get('nomeDoUsuario').touched && form.get('nomeDoUsuario').errors?.minlength">Nome precisa de
+            ter 3 letras
+        </span>
+
+        <span *ngIf="form.get('nomeDoUsuario').touched && form.get('nomeDoUsuario').errors?.required">Informação
+            obrigatória
+        </span>
+    </div>
+    <br>
+    <div>
+        <label for="email">E-mail:</label>
+        <input type="text" name="email" formControlName="email" required>
+        <span *ngIf="form.get('email').touched && form.get('email').errors?.email"> Email no formato inválido
+        </span>
+        <span *ngIf="form.get('email').touched && form.get('email').errors?.required">Informação
+            obrigatória
+        </span>
+    </div>
+    <br>
+    <div>
+        <label for="idade">Idade:</label>
+        <input type="number" name="idade" formControlName="idade" required>
+        <span *ngIf="form.get('idade').touched && form.get('idade').errors?.min"> Idade tem que ser maior que 0
+        </span>
+        <span *ngIf="form.get('idade').touched && form.get('idade').errors?.required">Informação
+            obrigatória
+        </span>
+    </div>
+    <br>
+    <div>
+        <button type="submit" [disabled]="form.invalid">Salvar</button>
+    </div>
+</form>
