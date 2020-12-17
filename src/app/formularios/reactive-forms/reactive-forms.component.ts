@@ -1,3 +1,4 @@
+import { MeuServicoService } from './../meu-servico.service';
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 
@@ -10,7 +11,8 @@ export class ReactiveFormsComponent implements OnInit {
 
   form: FormGroup;
 
-  constructor(private formBuilder: FormBuilder) { }
+  constructor(private formBuilder: FormBuilder,
+              private servico: MeuServicoService) { }
 
   ngOnInit(): void {
     this.form = this.formBuilder.group({
@@ -23,7 +25,13 @@ export class ReactiveFormsComponent implements OnInit {
   salvar(){
     console.log(this.form)
     if (this.form.valid){
-      
+      this.servico.salvarCadastro(this.form.getRawValue())
+      .subscribe((data) => {
+        alert('Cadastro salvo com sucesso');
+      },
+      (erro) => {
+        alert('Ocorreu um erro ao salvar!');
+      })
     }
   }
 

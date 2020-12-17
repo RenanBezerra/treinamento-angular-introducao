@@ -1,6 +1,8 @@
+import { MeuServicoService } from './meu-servico.service';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
+import { HttpClientModule } from '@angular/common/http'
 import { ReactiveFormsComponent } from './reactive-forms/reactive-forms.component';
 import { TemplateDrivenComponent } from './template-driven/template-driven.component';
 
@@ -13,10 +15,12 @@ import { TemplateDrivenComponent } from './template-driven/template-driven.compo
   ],
 
   imports: [
-    CommonModule, FormsModule, ReactiveFormsModule
+    CommonModule, FormsModule, ReactiveFormsModule, HttpClientModule
   ],
 
-  exports:[
+  providers: [MeuServicoService],
+
+  exports: [
     TemplateDrivenComponent,
     ReactiveFormsComponent
   ],
